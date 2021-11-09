@@ -9,7 +9,11 @@ html {
 }
 
 body {
-  background-image: linear-gradient(120deg, #f6d365, #fda085);
+  background-color: #211714;
+
+  background-size: cover;
+  background-position: top;
+  position: relative;
   color: white;
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
@@ -19,14 +23,24 @@ h1 {
   font-size: 4.2rem;
 }
 
-header,form {
+header,
+form {
   min-height: 20vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
-form input, 
+header {
+  background-image: linear-gradient(to right bottom, rgba(201, 75, 75, 0.5), rgba(75, 19, 79, 0.5)), url(../header-image.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  min-height: 30vh;
+}
+
+form input,
 form button {
   padding: 0.5rem;
   font-size: 3rem;
@@ -35,14 +49,14 @@ form button {
 }
 
 form button {
-  color: #d88771;
+  color: #E06E51;
   background: white;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 form button:hover {
-  background: #d88771;
+  background: #E06E51;
   color: white;
 }
 
@@ -55,6 +69,15 @@ form button:hover {
 .todo-list {
   min-width: 30%;
   list-style: none;
+}
+
+@media (max-width: 600px) {
+  .todo-list {
+    min-width: 80%;
+  }
+  .todo-input {
+    max-width: 250px;
+  }
 }
 
 .todo {
@@ -72,8 +95,9 @@ form button:hover {
   flex: 1;
 }
 
-.trash-btn, .complete-btn {
-  background-color: #ff6f47;
+.trash-btn,
+.complete-btn {
+  background-color: #E06E51;
   color: white;
   border: none;
   padding: 1rem;
@@ -82,14 +106,15 @@ form button:hover {
 }
 
 .complete-btn {
-  background-color: rgb(76, 204, 73);
+  background-color: #18943F;
 }
 
 .todo-item {
   padding: 0rem 1rem;
 }
 
-.fa-trash, .fa-check {
+.fa-trash,
+.fa-check {
   pointer-events: none;
 }
 
@@ -110,7 +135,7 @@ select {
   outline: none;
   border: none;
 
-  color: #ff6f47;
+  color: #E06E51;
   width: 15rem;
   cursor: pointer;
   padding: 1.5rem;
@@ -125,7 +150,7 @@ select {
 .select::after {
   content: "\25BC";
   position: absolute;
-  background-color: #ff6f47;
+  background-color: #E06E51;
   top: 0;
   right: 0;
   padding: 1.5rem;
@@ -134,9 +159,8 @@ select {
 }
 
 .select:hover::after {
-  color: #ff6f47;
+  color: #E06E51;
   background-color: white;
-
 }
 
 /* Showing Filter Elements */
@@ -147,4 +171,3 @@ select {
 .not-show {
   display: none;
 }
-
